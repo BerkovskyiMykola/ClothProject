@@ -42,16 +42,16 @@ namespace ClothProject.Controllers
                 Firstname = model.Firstname,
                 Email = model.Email,
                 Password = GetPasswordHash(model.Password),
-                Role = "User",
+                Role = "ShopOwner",
                 Sex = model.Sex,
             };
 
             await _context.Users.AddAsync(newUser);
             await _context.SaveChangesAsync();
 
-            var token = _jwtService.GetToken(new JwtUser { Login = newUser.Email, Role = "User" });
+            var token = _jwtService.GetToken(new JwtUser { Login = newUser.Email, Role = "ShopOwner" });
 
-            return Ok(new { token, newUser.UserId, Role = "User" });
+            return Ok(new { token, newUser.UserId, Role = "ShopOwner" });
         }
 
         [HttpPost("login")]
@@ -59,7 +59,7 @@ namespace ClothProject.Controllers
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.Email == model.Email);
 
-            if (user == null || user.Password != GetPasswordHash(model.Password))
+            if (user == null || user.Password != GetPasswordHash(model.Password) || user.Role == "User")
             {
                 return BadRequest("Email or password is incorrect");
             }
