@@ -27,6 +27,9 @@ i18n.use(LanguageDetector).init({
                 Users: "Users",
                 male: "male",
                 famale: "famale",
+                shops: "Shops",
+                name: "Title",
+                address: "Address",
 
                 "This field is required!": "This field is required!",
                 "This is not a valid email. Example: example@example.com": "This is not a valid email. Example: example@example.com",
@@ -65,6 +68,9 @@ i18n.use(LanguageDetector).init({
                 Users: "Користувачі",
                 male: "чоловік",
                 famale: "жінка",
+                shops: "Магазини",
+                name: "Назва",
+                address: "Адрес",
 
                 "This field is required!": "Це поле необхідне!",
                 "This is not a valid email. Example: example@example.com": "Це не валідна пошта. Наприклад: example@example.com",

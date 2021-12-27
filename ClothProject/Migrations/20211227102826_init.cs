@@ -11,7 +11,8 @@ namespace ClothProject.Migrations
                 columns: table => new
                 {
                     ClothCategoryId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -126,6 +127,27 @@ namespace ClothProject.Migrations
                         principalTable: "Shops",
                         principalColumn: "ShopId",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "ClothCategories",
+                columns: new[] { "ClothCategoryId", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Спортивна" },
+                    { 2, "Парадна" },
+                    { 3, "Домашня" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ClothTypes",
+                columns: new[] { "ClothTypeId", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Труси" },
+                    { 2, "Шорти" },
+                    { 3, "Футболка" },
+                    { 4, "Куртка" }
                 });
 
             migrationBuilder.CreateIndex(

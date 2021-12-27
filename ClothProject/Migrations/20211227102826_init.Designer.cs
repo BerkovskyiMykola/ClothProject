@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClothProject.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211226223233_init")]
+    [Migration("20211227102826_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,9 +27,29 @@ namespace ClothProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ClothCategoryId");
 
                     b.ToTable("ClothCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            ClothCategoryId = 1,
+                            Name = "Спортивна"
+                        },
+                        new
+                        {
+                            ClothCategoryId = 2,
+                            Name = "Парадна"
+                        },
+                        new
+                        {
+                            ClothCategoryId = 3,
+                            Name = "Домашня"
+                        });
                 });
 
             modelBuilder.Entity("ClothProject.Models.ClothType", b =>
@@ -45,6 +65,28 @@ namespace ClothProject.Migrations
                     b.HasKey("ClothTypeId");
 
                     b.ToTable("ClothTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            ClothTypeId = 1,
+                            Name = "Труси"
+                        },
+                        new
+                        {
+                            ClothTypeId = 2,
+                            Name = "Шорти"
+                        },
+                        new
+                        {
+                            ClothTypeId = 3,
+                            Name = "Футболка"
+                        },
+                        new
+                        {
+                            ClothTypeId = 4,
+                            Name = "Куртка"
+                        });
                 });
 
             modelBuilder.Entity("ClothProject.Models.Interest", b =>

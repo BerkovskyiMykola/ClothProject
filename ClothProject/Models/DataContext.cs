@@ -14,5 +14,45 @@ namespace ClothProject.Models
             : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ClothType>().HasData(new ClothType()
+            {
+                ClothTypeId = 1,
+                Name = "Труси"
+            },
+            new ClothType()
+            {
+                ClothTypeId = 2,
+                Name = "Шорти"
+            },
+            new ClothType()
+            {
+                ClothTypeId = 3,
+                Name = "Футболка"
+            },
+            new ClothType()
+            {
+                ClothTypeId = 4,
+                Name = "Куртка"
+            });
+
+            modelBuilder.Entity<ClothCategory>().HasData(new ClothCategory()
+            {
+                ClothCategoryId = 1,
+                Name = "Спортивна"
+            },
+            new ClothCategory()
+            {
+                ClothCategoryId = 2,
+                Name = "Парадна"
+            },
+            new ClothCategory()
+            {
+                ClothCategoryId = 3,
+                Name = "Домашня"
+            });
+        }
     }
 }
