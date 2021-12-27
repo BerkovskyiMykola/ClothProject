@@ -86,7 +86,7 @@ const ShopItem = (props) => {
 
     return (
         <Container>
-            <Jumbotron className="bg-dark text-white">
+            <Jumbotron style={{ height: "150px" }} className="bg-dark text-white">
                 <Row>
                     <Col className="text-left">
                         <h3>
@@ -107,7 +107,7 @@ const ShopItem = (props) => {
                 <Row>
                     <Col className="text-left"><h3>{t("shopItems")}</h3></Col>
                     <Col className="text-right">
-                        <Button onClick={() => { clearFields(); setModalAdd(true); }} color="success">{t("Create")}</Button>
+                        <Button onClick={() => { clearFields(); setModalAdd(true); }} color="success"><i className="fa fa-plus" aria-hidden="true"></i></Button>
                     </Col>
                 </Row>
             </Container>

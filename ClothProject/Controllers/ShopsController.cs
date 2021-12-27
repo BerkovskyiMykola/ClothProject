@@ -88,7 +88,7 @@ namespace ClothProject.Controllers
             return NoContent();
         }
 
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "ShopOwner")]
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteShop(int id)
         {

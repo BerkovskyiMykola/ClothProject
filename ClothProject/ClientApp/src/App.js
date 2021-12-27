@@ -58,27 +58,9 @@ export default function App() {
                     expand="md"
                     light
                 >
-                    <NavbarBrand tag={RRNavLink} exact to="/">
-                        ClothProject
-                    </NavbarBrand>
                     <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
-                            <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>
-                                    {i18n.language.toUpperCase()}
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem onClick={() => i18n.changeLanguage("ua")}>
-                                        UA
-                                    </DropdownItem>
-                                    <DropdownItem onClick={() => i18n.changeLanguage("en")}>
-                                        EN
-                                    </DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
-                        </Nav>
-                        <Nav className="ml-auto" navbar>
                             {user ? (
                                 <><NavItem>
                                     <NavLink tag={RRNavLink} exact to="/profile">{t("Profile")}</NavLink>
@@ -90,7 +72,7 @@ export default function App() {
                                     }
                                     {user.role === "ShopOwner" &&
                                         <NavItem>
-                                        <NavLink tag={RRNavLink} exact to="/shops">{t("shops")}</NavLink>
+                                            <NavLink tag={RRNavLink} exact to="/shops">{t("shops")}</NavLink>
                                         </NavItem>
                                     }
                                     <li className="nav-item">
@@ -109,7 +91,25 @@ export default function App() {
                                 </>
                             )}
                         </Nav>
+                        <Nav className="ml-auto" navbar>
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret>
+                                    {i18n.language.toUpperCase()}
+                                </DropdownToggle>
+                                <DropdownMenu right>
+                                    <DropdownItem onClick={() => i18n.changeLanguage("ua")}>
+                                        UA
+                                    </DropdownItem>
+                                    <DropdownItem onClick={() => i18n.changeLanguage("en")}>
+                                        EN
+                                    </DropdownItem>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+                        </Nav>
                     </Collapse>
+                    <NavbarBrand tag={RRNavLink} exact to="/">
+                        Comfy outfits
+                    </NavbarBrand>
                 </Navbar>
 
                 <div className="mt-3">

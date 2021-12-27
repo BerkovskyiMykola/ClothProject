@@ -81,7 +81,7 @@ const User = (props) => {
                     <Col className="text-right">
                         <Button onClick={createBackup} color="info">{t("CreateBackup")}</Button>
                         <Button onClick={restoreDatabase} color="warning">{t("RestoreDatabase")}</Button>
-                        <Button onClick={() => { clearFields(); setModalAdd(true) }} color="success">{t("Create")}</Button>
+                        <Button onClick={() => { clearFields(); setModalAdd(true) }} color="success"><i className="fa fa-plus" aria-hidden="true"></i></Button>
                         <Button onClick={() => { dispatch(getUsers()); }}>
                             <i className="fa fa-refresh" aria-hidden="true"></i>
                         </Button>

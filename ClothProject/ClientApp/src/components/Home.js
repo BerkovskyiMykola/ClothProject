@@ -5,7 +5,7 @@ export class Home extends Component {
 
   render () {
       return (
-          <h1 className="NotFound"><b>Welcome to ClothProject</b></h1>
+          <h1 className="NotFound"><b>Welcome to Comfy outfits</b></h1>
       )
   }
 }

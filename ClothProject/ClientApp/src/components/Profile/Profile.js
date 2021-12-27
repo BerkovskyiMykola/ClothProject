@@ -40,7 +40,14 @@ export default function Profile(props) {
 
     return (
         <Container>
-            <Jumbotron className="bg-dark text-white">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <Jumbotron style={{ height: "100px"}} className="bg-dark text-white">
                 <Row>
                     <Col className="text-left">
                         <h3>
@@ -49,7 +56,7 @@ export default function Profile(props) {
                     </Col>
                     <Col className="text-right">
                         <Button onClick={() => { dispatch(clearMessage()); setModalEdit(true); setModel(profile); }}>
-                            {t("Edit")}
+                            <i className="fa fa-pencil" />
                         </Button>
                     </Col>
                 </Row>

@@ -14,21 +14,21 @@ const ListItem = ({ columns, item, index, deleteRecord, editRecord, openPage, ac
                         <button
                             onClick={() => { editRecord(item) }}
                             className="btn btn-outline-success btn-sm float-left">
-                            <i className="fa fa-edit" />
+                            <i className="fa fa-pencil" />
                         </button>
                     }
                     {deleteRecord &&
                         <button
                             onClick={() => { deleteRecord(item) }}
                             className="btn btn-outline-danger btn-sm float-left">
-                            <i className="fa fa-trash-o" />
+                            <i className="fa fa-minus-circle" />
                         </button>
                     }
                     {openPage &&
                         <button
                             onClick={() => { openPage(item) }}
                             className="btn btn-outline-info btn-sm float-left">
-                            <i className="fa fa-folder-open-o" />
+                            <i className="fa fa-ellipsis-h" />
                         </button>
                     }
                 </td>

@@ -73,7 +73,7 @@ const Shop = (props) => {
                 <Row>
                     <Col className="text-left"><h3>{t("shops")}</h3></Col>
                     <Col className="text-right">
-                        <Button onClick={() => { clearFields(); setModalAdd(true); }} color="success">{t("Create")}</Button>
+                        <Button onClick={() => { clearFields(); setModalAdd(true); }} color="success"><i className="fa fa-plus" aria-hidden="true"></i></Button>
                         <Button onClick={() => { dispatch(getShops()); }}>
                             <i className="fa fa-refresh" aria-hidden="true"></i>
                         </Button>
