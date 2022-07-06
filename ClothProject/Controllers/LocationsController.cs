@@ -23,8 +23,16 @@ namespace ClothProject.Controllers
             _context = context;
         }
 
+        [HttpGet("all/{userId}")]
+        public async Task<IActionResult> GetLocations(int userId)
+        {
+            var locations = await _context.Locations.Where(x => x.UserId == userId).ToListAsync();
+
+            return Ok(locations);
+        }
+
         [HttpPost("create")]
-        public async Task<IActionResult> PostUser(Location model)
+        public async Task<IActionResult> PostLocation(Location model)
         {
             await _context.Locations.AddAsync(model);
             await _context.SaveChangesAsync();
