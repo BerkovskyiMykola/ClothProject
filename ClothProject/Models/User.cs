@@ -25,5 +25,6 @@ namespace ClothProject.Models
 
         public List<Shop> Shops { get; set; } = new List<Shop>();
         public List<Interest> Interests { get; set; } = new List<Interest>();
+        public List<Location> Locations { get; set; } = new List<Location>();
     }
 }

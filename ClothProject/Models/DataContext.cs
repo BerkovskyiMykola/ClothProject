@@ -10,6 +10,7 @@ namespace ClothProject.Models
         public DbSet<ShopItem> ShopItems { get; set; }
         public DbSet<ClothType> ClothTypes { get; set; }
         public DbSet<Interest> Interests { get; set; }
+        public DbSet<Location> Locations { get; set; }
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
